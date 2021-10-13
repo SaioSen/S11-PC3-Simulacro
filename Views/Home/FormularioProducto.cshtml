@@ -1,0 +1,89 @@
+@model Producto
+@{
+    ViewData["Title"] = "Ingrese Producto que desea Comprar";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+
+<form method="post">
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-6">
+                <label asp-for="NombreProducto">Nombre del Pruducto:</label>
+                <input asp-for="NombreProducto" class="form-control"></input>
+                <span asp-validation-for="NombreProducto" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Foto">Foto del Producto (URL):</label>
+                <input asp-for="Foto" class="form-control"></input>
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Descripcion">Descripción del producto:</label>
+        <textarea asp-for="Descripcion" class="form-control"></textarea>
+        <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="Categoria">Categoría del Producto:</label>
+                <select asp-for="Categoria" class="custom-select" id="inputGroupSelect01">
+                    <option velue="Tecnología">Tecnología</option>
+                    <option value="Arte">Arte</option>
+                    <option value="Ropa">Ropa</option>
+                    <option value="Muebles del hogar">Muebles del hogar</option>
+                </select>
+                <span asp-validation-for="Categoria" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="Lugar">Lugar de compra:</label>
+                <input asp-for="Lugar" class="form-control"></input>
+                <span asp-validation-for="Lugar" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="Precio">Precio a Pagar (S/.):</label>
+                <input asp-for="Precio" class="form-control"></input>
+                <span asp-validation-for="Precio" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label asp-for="NombreDelComprador">Nombre del comprador:</label>
+                <input asp-for="NombreDelComprador" class="form-control"></input>
+                <span asp-validation-for="NombreDelComprador" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-4">
+                <label asp-for="CelularContacto">Celulara de Contacto:</label>
+                <input asp-for="CelularContacto" class="form-control"></input>
+                <span asp-validation-for="CelularContacto" class="text-danger"></span>
+            </div>
+            <div class="col-md-4">
+                <label asp-for="FechaPublicacion">Fecha de publicación:</label>
+                <input type="date" asp-for="FechaPublicacion" class="form-control"></input>
+                <span asp-validation-for="FechaPublicacion" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-primary">Enviar</button>
+    </div>
+
+
+
+
+</form>

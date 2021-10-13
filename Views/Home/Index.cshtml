@@ -1,8 +1,79 @@
-﻿@{
+﻿@model List<Producto>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <h1 class="display-4">Se Busca</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <p>Nombre Producto</p>
+                </th>
+                <th>
+                    <p>Foto</p>
+                </th>
+                <th>
+                    <p>Descripción</p>
+                </th>
+                <th>
+                    <p>Precio</p>
+                </th>
+                <th>
+                    <p>Celular de Contacto</p>
+                </th>
+                <th>
+                    <p>Nombre del Comprador</p>
+                </th>
+                <th>
+                    <p>Lugar</p>
+                </th>
+                <th>
+                    <p>Categoria</p>
+                </th>
+                <th>
+                    <p>Fecha publicación</p>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.NombreProducto)
+                    </td>
+                    <td>
+                        <img src="@p.Foto" alt="" width="75" height="100">
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Precio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.CelularContacto)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.NombreDelComprador)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Lugar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.Categoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => p.FechaPublicacion)
+                    </td>
+                </tr> 
+            }
+        </tbody>
+    </table>
+
+    @if (Model.Count == 0)
+    {
+        <p>No hay solicitudes de Compra <a class="btn btn-primary" asp-action="FormularioProducto">Create New +</a></p>
+    }
