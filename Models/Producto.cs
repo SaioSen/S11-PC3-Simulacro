@@ -32,8 +32,14 @@ namespace S11_PC3_Simulacro.Models
         [Required(ErrorMessage="Debe ingresar el nombre del comprador")]
         public string NombreDelComprador { get; set; }
 
-        [Required(ErrorMessage="Debe escoger una categoría")]
-        public string Categoria { get; set; }
+        //[Required(ErrorMessage="Debe escoger una categoría")]
+        //public string Categoria { get; set; }
+
+        
+        public Categoria Categoria { get; set;}
+
+
+        public int CategoriaId { get; set; }
 
         public DateTime FechaPublicacion { get; set; }
 

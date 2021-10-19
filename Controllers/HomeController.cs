@@ -37,6 +37,7 @@ namespace S11_PC3_Simulacro.Controllers
         {
             if(ModelState.IsValid){
                 //guardar el objeto sa en la BD
+                
                 _context.Add(p);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
