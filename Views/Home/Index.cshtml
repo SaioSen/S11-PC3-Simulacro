@@ -3,6 +3,7 @@
     ViewData["Title"] = "Home Page";
 }
 
+<!-- 
 <div class="text-center">
     <h1 class="display-4">Se Busca</h1>
     <table class="table">
@@ -72,6 +73,26 @@
             }
         </tbody>
     </table>
+
+    -->
+    <h1 class="display-4 text-center">Se busca</h1>
+    <div class="row mt-5">
+        @foreach(var p in Model){
+            <div class="card col-4" style="width: 18rem;">
+                <h5 class="text-center">@p.NombreProducto</h5>
+                <img src="@p.Foto" lass="card-img-top" height="400px">
+                <p>
+                    Descripcion: @p.Descripcion <br>
+                    Precio: S/. @p.Precio <br>
+                    Celular de Contacto: @p.CelularContacto <br>
+                    Lugar: @p.Lugar <br>
+                    Nombre del Comprador: @p.NombreDelComprador <br>
+                    Categoria: @p.Categoria <br>
+                </p>
+            </div>
+        }
+
+    </div>
 
     @if (Model.Count == 0)
     {
